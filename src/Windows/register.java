@@ -1,5 +1,6 @@
 package Windows;
 
+import Modelo.Lista;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -14,12 +15,16 @@ import javax.swing.JOptionPane;
  */
 public class register extends javax.swing.JFrame {
 
+    Lista Lista;
     
     public register() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        Lista = new Lista();
     }
     
+    @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/iconLogo.png"));
         return retValue;
@@ -34,13 +39,6 @@ public class register extends javax.swing.JFrame {
      * @param municipioR El nombre del municipio
      * @param responsableR El nombre del responsable del sitio
      */
-    void CrearSitio(String codR, String nombreR, String municipioR, String responsableR) {
-        try {
-            
-        } catch (Exception ex) {
-            System.out.println("Ha ocurrido un error" + ex);
-        } 
-    }
 
     void vaciarCampos() {
         try {
@@ -278,15 +276,17 @@ public class register extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSession1ActionPerformed
 
     private void jButtonSession2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSession2ActionPerformed
-        // TODO add your handling code here:
+        Lista.insertarAntes(new Modelo.Lista(Tcod.getText(), Tnom.getText(), Tmunicipio.getText(), Tresponsable.getText()));
+        JOptionPane.showMessageDialog(null, "Sitio agregado correctamente");
+        vaciarCampos();
     }//GEN-LAST:event_jButtonSession2ActionPerformed
 
     private void jButtonSession3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSession3ActionPerformed
-        // TODO add your handling code here:
+        Lista.Listar();
     }//GEN-LAST:event_jButtonSession3ActionPerformed
 
     private void jButtonSession4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSession4ActionPerformed
-        // TODO add your handling code here:
+        Lista.eliminarlista();
     }//GEN-LAST:event_jButtonSession4ActionPerformed
 
     /**

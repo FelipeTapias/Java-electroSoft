@@ -1,8 +1,10 @@
 package Modelo;
 
-/**
+/** Esta clase es donde se construyen los nodos para los sitios, estos
+ * tiene sus respectivos atributos y los metodos get y set
  *
- * @author FelipeTapias
+ * @author Felipe Tapias
+ * @version 1.1 
  */
 public class Nodo extends Sitio {
     private Nodo sig;

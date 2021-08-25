@@ -1,10 +1,10 @@
 package Modelo;
 
-/** Esta clase es donde se construyen los nodos para los sitios, estos
+/** Esta clase es donde se construyen la clase para los sitios, estos
  * tiene sus respectivos atributos y los metodos get y set
  *
  * @author Felipe Tapias
- * @version 1.0
+ * @version 1.1
  */
 public class Sitio {
     private String codigo;
